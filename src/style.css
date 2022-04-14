@@ -8,7 +8,7 @@
 #content {
   width: 100vw;
   height: 100vh;
-  background-color: antiquewhite;
+  background: url(./japan.jpg);
   display: grid;
   grid-template-rows: 50px 1fr;
 }
@@ -35,15 +35,14 @@
   background: gold;
 }
 
-#main {
-  background: url(./japan.jpg);
+#home {
   display: grid;
   grid-template-rows: max-content 1fr;
   justify-items: center;
   gap: 50px;
 }
 
-#headline, #copy {
+#home #headline, #home #copy {
   background: gold;
   height: 100px;
   width: 400px;
@@ -54,11 +53,17 @@
   align-items: center;
 }
 
-#headline {
+#home #headline {
   margin-top: 75px;
 }
 
-#copy {
+#home #copy {
   height: 400px;
   padding: 25px;
+}
+
+#menu {
+  display: grid;
+  grid-template-rows: repeat(3, max-content);
+  gap: 50px;
 }
