@@ -76,15 +76,18 @@ function loadInfo() {
   const info = document.createElement('div');
   info.id = 'info';
   const location = document.createElement('div');
-  location.id = 'infoLocation';
+  location.id = 'location';
+  const locH1 = document.createElement('h1');
+  locH1.textContent = 'Location';
   const locP = document.createElement('p');
   locP.textContent = 'セブン西麻布 B1F 4 Chome-1-15 Nishiazabu, Minato City, Tokyo 106-0031, Japan';
+  location.appendChild(locH1);
   location.appendChild(locP);
   const hours = document.createElement('div');
-  hours.id = 'infoHours';
+  hours.id = 'hours';
   const hrsHead = document.createElement('div');
   hrsHead.id = 'hoursHead';
-  hrsH1 = document.createElement('h1');
+  const hrsH1 = document.createElement('h1');
   hrsH1.textContent = 'Hours';
   hrsHead.appendChild(hrsH1);
   const hrsDiv = document.createElement('div');
@@ -93,13 +96,30 @@ function loadInfo() {
   const li0 = createLi('Tuesday - Thursday: 5pm - 10pm');
   const li1 = createLi('Friday - Saturday: 5pm - 12am');
   const li2 = createLi('Sunday - Monday: closed');
-  ul
+  ul.appendChild(li0);
+  ul.appendChild(li1);
+  ul.appendChild(li2);
+  hrsDiv.appendChild(ul);
+  hours.appendChild(hrsHead);
+  hours.appendChild(hrsDiv);
+  const contact = document.createElement('div');
+  contact.id = 'contact';
+  const contactH1 = document.createElement('h1');
+  contactH1.textContent = 'Contact';
+  const phone = document.createElement('p');
+  phone.textContent = '+81 50-5263-6863';
+  contact.appendChild(contactH1);
+  contact.appendChild(phone);
+  info.appendChild(location);
+  info.appendChild(hours);
+  info.appendChild(contact);
+  content.appendChild(info);
 }
 
 function createLi(text) {
   const li = document.createElement('li');
   const p = document.createElement('p');
-  p.textContent = phrase;
+  p.textContent = text;
   li.appendChild(p);
   return li;
 }
