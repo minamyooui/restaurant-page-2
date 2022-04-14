@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#content {
+  width: 100vw;
+  height: 100vh;
+  background-color: antiquewhite;
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+#main {
+  background: url(./japan.jpg);
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  justify-items: center;
+  gap: 50px;
+}
+
+#headline, #copy {
+  background: gold;
+  height: 100px;
+  width: 400px;
+  border: 2px solid black;
+  border-radius: 15px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+#headline {
+  margin-top: 50px;
+}
+#copy {
+  height: 400px;
+  padding: 25px;
+}

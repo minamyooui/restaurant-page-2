@@ -1,1 +1,1 @@
-console.log('kyaa');
+import './style.css';
