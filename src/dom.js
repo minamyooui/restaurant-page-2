@@ -18,7 +18,7 @@ function pageLoad() {
   navDiv.appendChild(navInfo);
   nav.appendChild(navDiv);
   content.appendChild(nav);
-  loadMenu();
+  loadInfo();
 }
 
 function loadHome() {
@@ -72,7 +72,36 @@ function loadMenu() {
 }
 
 function loadInfo() {
+  const content = document.getElementById('content');
+  const info = document.createElement('div');
+  info.id = 'info';
+  const location = document.createElement('div');
+  location.id = 'infoLocation';
+  const locP = document.createElement('p');
+  locP.textContent = 'セブン西麻布 B1F 4 Chome-1-15 Nishiazabu, Minato City, Tokyo 106-0031, Japan';
+  location.appendChild(locP);
+  const hours = document.createElement('div');
+  hours.id = 'infoHours';
+  const hrsHead = document.createElement('div');
+  hrsHead.id = 'hoursHead';
+  hrsH1 = document.createElement('h1');
+  hrsH1.textContent = 'Hours';
+  hrsHead.appendChild(hrsH1);
+  const hrsDiv = document.createElement('div');
+  hrsDiv.id = 'hrsDiv';
+  const ul = document.createElement('ul');
+  const li0 = createLi('Tuesday - Thursday: 5pm - 10pm');
+  const li1 = createLi('Friday - Saturday: 5pm - 12am');
+  const li2 = createLi('Sunday - Monday: closed');
+  ul
+}
 
+function createLi(text) {
+  const li = document.createElement('li');
+  const p = document.createElement('p');
+  p.textContent = phrase;
+  li.appendChild(p);
+  return li;
 }
 
 function clear() {
