@@ -58,6 +58,7 @@ function loadMenu() {
   i1.appendChild(i1H2);
   i1.appendChild(i1p);
   const i2 = document.createElement('div');
+  i2.classList.add('menuItem');
   const i2H2 = document.createElement('h2');
   i2H2.textContent = 'Sushi Set B';
   const i2p = document.createElement('p');

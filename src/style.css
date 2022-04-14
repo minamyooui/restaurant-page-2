@@ -11,6 +11,7 @@
   background: url(./japan.jpg);
   display: grid;
   grid-template-rows: 50px 1fr;
+  gap: 75px;
 }
 
 #nav {
@@ -42,7 +43,8 @@
   gap: 50px;
 }
 
-#home #headline, #home #copy {
+#home #headline, #home #copy, 
+#menu #menuHead, #menu .menuItem {
   background: gold;
   height: 100px;
   width: 400px;
@@ -53,11 +55,7 @@
   align-items: center;
 }
 
-#home #headline {
-  margin-top: 75px;
-}
-
-#home #copy {
+#home #copy, #menu .menuItem {
   height: 400px;
   padding: 25px;
 }
@@ -66,4 +64,14 @@
   display: grid;
   grid-template-rows: repeat(3, max-content);
   gap: 50px;
+  justify-content: center;
 }
+
+#menu #menuHead {
+  margin-bottom: 25px;
+}
+#menu .menuItem {
+  height: 200px;
+}
+
+
