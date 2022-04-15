@@ -1,4 +1,12 @@
 import './style.css';
-import pageLoad from './dom';
+import {loadHome, loadInfo, loadMenu} from './dom';
 
-pageLoad();
+const autorun = (() => {
+  loadHome();
+  const home = document.getElementById('navHome');
+  home.onclick = loadHome;
+  const menu = document.getElementById('navMenu');
+  menu.onclick = loadMenu;
+  const info = document.getElementById('navInfo');
+  info.onclick = loadInfo;
+})();

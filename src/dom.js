@@ -1,4 +1,4 @@
-function pageLoad() {
+const pageLoad = (() => {
   const content = document.getElementById('content');
   const nav = document.createElement('div');
   nav.id = 'nav';
@@ -7,22 +7,28 @@ function pageLoad() {
   const navHome = document.createElement('button');
   navHome.textContent = 'Home';
   navHome.classList.add('navBtn');
+  navHome.id = 'navHome';
   const navMenu = document.createElement('button');
   navMenu.textContent = 'Menu';
   navMenu.classList.add('navBtn');
+  navMenu.id = 'navMenu';
   const navInfo = document.createElement('button');
   navInfo.textContent = 'Info';
   navInfo.classList.add('navBtn');
+  navInfo.id = 'navInfo';
   navDiv.appendChild(navHome);
   navDiv.appendChild(navMenu);
   navDiv.appendChild(navInfo);
   nav.appendChild(navDiv);
+  const main = document.createElement('div');
+  main.id = 'main';
   content.appendChild(nav);
-  loadInfo();
-}
+  content.appendChild(main);
+  return {main};
+})();
 
 function loadHome() {
-  const content = document.getElementById('content');
+  clear();
   const home = document.createElement('div');
   home.id = 'home';
   const headline = document.createElement('div');
@@ -37,11 +43,11 @@ function loadHome() {
   copy.appendChild(p);
   home.appendChild(headline);
   home.appendChild(copy);
-  content.appendChild(home);
+  pageLoad.main.appendChild(home);
 }
 
 function loadMenu() {
-  const content = document.getElementById('content');
+  clear();
   const menu = document.createElement('div');
   menu.id = 'menu';
   const head = document.createElement('div');
@@ -68,11 +74,11 @@ function loadMenu() {
   menu.appendChild(head);
   menu.appendChild(i1);
   menu.appendChild(i2);
-  content.appendChild(menu);
+  pageLoad.main.appendChild(menu);
 }
 
 function loadInfo() {
-  const content = document.getElementById('content');
+  clear();
   const info = document.createElement('div');
   info.id = 'info';
   const location = document.createElement('div');
@@ -113,7 +119,7 @@ function loadInfo() {
   info.appendChild(location);
   info.appendChild(hours);
   info.appendChild(contact);
-  content.appendChild(info);
+  pageLoad.main.appendChild(info);
 }
 
 function createLi(text) {
@@ -125,7 +131,9 @@ function createLi(text) {
 }
 
 function clear() {
-
+  while(pageLoad.main.firstChild) {
+    pageLoad.main.removeChild(pageLoad.main.firstChild);
+  }
 }
 
-export default pageLoad;
+export {loadHome, loadMenu, loadInfo}
